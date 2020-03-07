@@ -1,0 +1,12 @@
+image: electronshepherds/zephyr:latest
+
+stages:
+  - build
+
+build:
+  stage: build
+  script:
+    - west update
+    - pip3 install --user -r ./zephyr/scripts/requirements.txt
+    - source zephyr/zephyr-env.sh
+    - west build -b nucleo_wb55rg ./zephyr/samples/hello_world
