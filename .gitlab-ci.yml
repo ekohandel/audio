@@ -6,6 +6,7 @@ stages:
 build:
   stage: build
   script:
+    - cd fw
     - west update
     - pip3 install --user -r ./zephyr/scripts/requirements.txt
     - source ./zephyr/zephyr-env.sh
