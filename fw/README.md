@@ -21,8 +21,8 @@ mapped to `/audio` directory.
 ## Building the Docker Container
 There shouldn't be a need to build the docker container unless something has
 changed. But for completeness the docker container can be built using
-`docker build -f <Dockerfile> -t <tag>`.
-For example `docker build -f fw/Dockerfile -t electronshepherds/zephyr:latest`.
+`docker build --no-cache -t <tag> .` within the `fw` directory.
+For example `docker build --no-cache -t electronshepherds/zephyr:latest .`.
 
 ## Building Firmware
 The firmware is located in the `fw` directory. After navigating to this
@@ -37,8 +37,4 @@ west build -b nucleo_wb55rg ./app
 ## Debugging Firmware
 The debugging process uses the standard GDB server/client configuration. The
 GDB server can run on the host system using `st-util`. The GDB client can run
-inside the docker container using
-```
-~/zephyr-sdk-0.11.2/arm-zephyr-eabi/bin/arm-zephyr-eabi-gdb --tui
-/audio/fw/build/zephyr/zephyr.elf
-```
+inside the docker container using `~/zephyr-sdk-0.11.2/arm-zephyr-eabi/bin/arm-zephyr-eabi-gdb --tui /audio/fw/build/zephyr/zephyr.elf`.
