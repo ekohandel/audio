@@ -13,7 +13,8 @@ RUN apt-get install -y --no-install-recommends git cmake ninja-build gperf \
     ccache dfu-util device-tree-compiler wget \
     python3-pip python3-setuptools python3-tk python3-wheel xz-utils file \
     make gcc gcc-multilib g++-multilib libsdl2-dev \
-    gnupg2 software-properties-common
+    gnupg2 software-properties-common \
+    libpython3.6
 
 # Upgrade CMake
 RUN wget -O - https://apt.kitware.com/keys/kitware-archive-latest.asc 2>/dev/null | apt-key add -
