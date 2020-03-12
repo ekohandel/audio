@@ -18,12 +18,6 @@ The container can then be run using
 This should bring you to a prompt at the root of the image. The repository is
 mapped to `/audio` directory.
 
-## Building the Docker Container
-There shouldn't be a need to build the docker container unless something has
-changed. But for completeness the docker container can be built using
-`docker build --no-cache -t <tag> .` within the `fw` directory.
-For example `docker build --no-cache -t electronshepherds/zephyr:latest .`.
-
 ## Building Firmware
 The firmware is located in the `fw` directory. After navigating to this
 directory the application can be built using the following commands:
