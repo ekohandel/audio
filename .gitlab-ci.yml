@@ -3,11 +3,14 @@ image: electronshepherds/zephyr:latest
 stages:
   - build
 
-build:
+build_nucleo_f411re:
   stage: build
   script:
     - cd fw
-    - west update
-    - pip3 install --user -r ./zephyr/scripts/requirements.txt
-    - source ./zephyr/zephyr-env.sh
-    - west build -b nucleo_wb55rg ./app
+    - source app/scripts/build.sh nucleo_f411re
+
+build_olimex_stm32_p407:
+  stage: build
+  script:
+    - cd fw
+    - source app/scripts/build.sh olimex_stm32_p407
