@@ -22,10 +22,7 @@ mapped to `/audio` directory.
 The firmware is located in the `fw` directory. After navigating to this
 directory the application can be built using the following commands:
 ```
-west update
-pip3 install --user -r ./zephyr/scripts/requirements.txt
-source ./zephyr/zephyr-env.sh
-west build -b nucleo_wb55rg ./app
+./app/scripts/build.sh <board name>
 ```
 
 ## Debugging Firmware

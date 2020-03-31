@@ -1,11 +1,11 @@
 manifest:
   remotes:
-    - name: electronshepherds
-      url-base: https://github.com/electronshepherds
+    - name: zephyrproject
+      url-base: https://github.com/zephyrproject-rtos
   projects:
     - name: zephyr
-      remote: electronshepherds
-      revision: v2.2.0
+      remote: zephyrproject
+      revision: master
       import: true
   self:
     path: app
