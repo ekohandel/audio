@@ -20,10 +20,7 @@ mapped to `/audio` directory.
 
 ## Building Firmware
 The firmware is located in the `fw` directory. After navigating to this
-directory the application can be built using the following commands:
-```
-./app/scripts/build.sh <board name>
-```
+directory the application can be built using the following commands: `scripts/build.sh <board name>`
 
 ## Debugging Firmware
 The debugging process uses the standard GDB server/client configuration. The

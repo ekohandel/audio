@@ -7,10 +7,10 @@ build_nucleo_f411re:
   stage: build
   script:
     - cd fw
-    - source app/scripts/build.sh nucleo_f411re
+    - source scripts/build.sh nucleo_f411re
 
 build_olimex_stm32_p407:
   stage: build
   script:
     - cd fw
-    - source app/scripts/build.sh olimex_stm32_p407
+    - source scripts/build.sh olimex_stm32_p407
