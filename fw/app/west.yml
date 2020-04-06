@@ -5,7 +5,7 @@ manifest:
   projects:
     - name: zephyr
       remote: zephyrproject
-      revision: master
+      revision: v2.2.0
       import: true
   self:
     path: app
