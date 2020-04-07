@@ -12,4 +12,16 @@ config UART_3
 	default y
 	depends on UART_CONSOLE
 
+if I2S
+
+config I2S_3
+	default y
+	depends on I2S
+
+config I2S_STM32
+	default y
+	depends on I2S
+
+endif # I2S
+
 endif # BOARD_OLIMEX_STM32_P407
