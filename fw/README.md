@@ -8,15 +8,24 @@ In order to simplify the build environment, a docker container is used.
 This same container is used by the CI system which ensures a consistent build
 environment is maintained.
 
-## Using the Docker Container
-To use the docker container, we first need to grab it from the repository. This
-can be done using `docker pull electronshepherds/zephyr:latest`.
+If you are running the docker container on linux, you will need to enable the
+[user namespace remap](https://docs.docker.com/engine/security/userns-remap) functionality.
+
+Basically you need to create the mapping in `/ect/subuid` and `/etc/subgid`:
+```
+<username>:1000:65536
+```
+and then configure the docker daemon by adding the following to `/etc/docker/daemon.json`:
+```
+{
+  "userns-remap": "<username>"
+}
+```
 
 The container can then be run using
-`docker run -it -v $(pwd):/audio electronshepherds/zephyr:latest`.
+`docker run -it --rm -v $(pwd):/audio -w /audio electronshepherds/zephyr:latest`.
 
-This should bring you to a prompt at the root of the image. The repository is
-mapped to `/audio` directory.
+This should bring you to a prompt at the `/audio` directory of the image.
 
 ## Building Firmware
 The firmware is located in the `fw` directory. After navigating to this
